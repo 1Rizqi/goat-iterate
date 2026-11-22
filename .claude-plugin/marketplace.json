@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "goat-iterate",
+  "description": "Lead + builder + critic quality loop for AI coding agents.",
+  "owner": {
+    "name": "Riz",
+    "url": "https://github.com/1Rizqi"
+  },
+  "plugins": [
+    {
+      "name": "goat-iterate",
+      "description": "Builders build with per-line evidence, a fresh critic judges each round, the lead keeps best-so-far.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

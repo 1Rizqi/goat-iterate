@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-label="The goat-iterate loop: the lead sets the bar and dispatches builders; builders build every checklist line and save per-line evidence; a fresh critic judges each round from evidence; the lead keeps what passed and batches every FAIL into the next round; the loop stops when the bar is met or the budget is spent.">
+  <rect width="1200" height="620" fill="#0d1117"/>
+  <rect x="1" y="1" width="1198" height="618" rx="24" fill="#0d1117" stroke="#30363d" stroke-width="2"/>
+
+  <text x="600" y="64" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#e6edf3">The loop</text>
+
+  <!-- role cards -->
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <!-- LEAD -->
+    <rect x="80" y="110" width="300" height="190" rx="14" fill="#161b22" stroke="#f0883e" stroke-width="2"/>
+    <text x="230" y="152" text-anchor="middle" font-size="24" font-weight="700" fill="#f0883e">LEAD</text>
+    <text x="230" y="188" text-anchor="middle" font-size="17" fill="#c9d1d9">your main agent</text>
+    <text x="230" y="218" text-anchor="middle" font-size="15" fill="#8b949e">writes spec.md + eye.md</text>
+    <text x="230" y="244" text-anchor="middle" font-size="15" fill="#8b949e">dispatches builders</text>
+    <text x="230" y="270" text-anchor="middle" font-size="15" fill="#8b949e">keeps best-so-far</text>
+
+    <!-- BUILDERS -->
+    <rect x="450" y="110" width="300" height="190" rx="14" fill="#161b22" stroke="#3fb950" stroke-width="2"/>
+    <text x="600" y="152" text-anchor="middle" font-size="24" font-weight="700" fill="#3fb950">BUILDERS</text>
+    <text x="600" y="188" text-anchor="middle" font-size="17" fill="#c9d1d9">worker subagents</text>
+    <text x="600" y="218" text-anchor="middle" font-size="15" fill="#8b949e">build every checklist line</text>
+    <text x="600" y="244" text-anchor="middle" font-size="15" fill="#8b949e">commit their deliverable</text>
+    <text x="600" y="270" text-anchor="middle" font-size="15" fill="#8b949e">save per-line evidence</text>
+
+    <!-- CRITIC -->
+    <rect x="820" y="110" width="300" height="190" rx="14" fill="#161b22" stroke="#58a6ff" stroke-width="2"/>
+    <text x="970" y="152" text-anchor="middle" font-size="24" font-weight="700" fill="#58a6ff">CRITIC</text>
+    <text x="970" y="188" text-anchor="middle" font-size="17" fill="#c9d1d9">fresh subagent each round</text>
+    <text x="970" y="218" text-anchor="middle" font-size="15" fill="#8b949e">never builds</text>
+    <text x="970" y="244" text-anchor="middle" font-size="15" fill="#8b949e">PASS / FAIL / UNSEEN + scores</text>
+    <text x="970" y="270" text-anchor="middle" font-size="15" fill="#8b949e">max 3 professional rejections</text>
+  </g>
+
+  <!-- forward arrows -->
+  <g stroke="#8b949e" stroke-width="3" fill="none">
+    <path d="M 380 190 L 444 190"/>
+    <path d="M 750 190 L 814 190"/>
+  </g>
+  <g fill="#8b949e" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13">
+    <path d="M 444 190 l -12 -6 v 12 z"/>
+    <path d="M 814 190 l -12 -6 v 12 z"/>
+    <text x="397" y="178">brief</text>
+    <text x="762" y="178">evidence</text>
+  </g>
+
+  <!-- verdict arrow back to lead -->
+  <g stroke="#8b949e" stroke-width="3" fill="none">
+    <path d="M 970 300 L 970 360 L 230 360 L 230 306"/>
+  </g>
+  <path d="M 230 306 l -6 12 h 12 z" fill="#8b949e"/>
+  <text x="600" y="350" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" fill="#8b949e">verdict + aspect scores, pairwise vs best-so-far</text>
+
+  <!-- batch arrow critic back to builders -->
+  <g stroke="#3fb950" stroke-width="3" fill="none" stroke-dasharray="8 6">
+    <path d="M 1060 300 L 1060 430 L 600 430 L 600 306"/>
+  </g>
+  <path d="M 600 306 l -6 12 h 12 z" fill="#3fb950"/>
+  <text x="830" y="452" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" fill="#3fb950">next round: every FAIL + UNSEEN + new line, grouped by root cause</text>
+
+  <!-- stop bar -->
+  <rect x="80" y="490" width="1040" height="86" rx="14" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+  <text x="600" y="526" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#e6edf3">Stop when the bar is met</text>
+  <text x="600" y="556" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" fill="#8b949e">≥90% PASS · every aspect ≥8 · no open rejection → done · otherwise: BAR NOT MET</text>
+</svg>

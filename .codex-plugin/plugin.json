@@ -1,0 +1,14 @@
+{
+  "name": "goat-iterate",
+  "version": "1.0.0",
+  "description": "Lead + builder + critic quality loop: builders build with per-line evidence, a fresh critic judges each round, the lead keeps best-so-far.",
+  "author": {
+    "name": "Riz",
+    "url": "https://github.com/1Rizqi"
+  },
+  "homepage": "https://github.com/1Rizqi/goat-iterate",
+  "repository": "https://github.com/1Rizqi/goat-iterate",
+  "license": "MIT",
+  "keywords": ["quality-loop", "code-review", "builder", "critic", "delegation"],
+  "skills": "./skills/"
+}

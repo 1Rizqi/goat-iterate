@@ -1,0 +1,75 @@
+PLAN APPROVED BY OWNER. DO NOT ASK QUESTIONS OR WAIT FOR CONFIRMATION. EXECUTE IMMEDIATELY. RUN TESTS AND COMMIT.
+
+You are the BUILDER in a goat-iterate loop (round 1, full build). The lead planned; a separate critic will judge your work from evidence. Build every line below to its end state.
+
+REPO: C:/Users/Rizqi/projects/goat-iterate (git repo, branch main, remote origin = https://github.com/1Rizqi/goat-iterate)
+
+PHASE 0 (fold forward): the working tree has uncommitted work (README.md modified; assets/, .claude-plugin/, .codex-plugin/, gemini-extension.json untracked). Commit it first as the baseline:
+  git add -A && git commit -m "wip: universal plugin manifests, assets, install section"
+
+GOAL: make the repo read like a top-professional plugin repo. Quality bar: the ponytail repo README structure (reference clone: C:/Users/Rizqi/AppData/Local/hermes/cache/scratch/ponytail-ref — read its README.md for tone/structure; do not copy its content).
+
+SCOPE — files you may touch:
+- README.md (full rewrite)
+- assets/banner-dark.svg, assets/banner-light.svg, assets/loop-dark.svg, assets/loop-light.svg (fix defects only)
+- gemini-extension.json (add "license": "MIT" if the gemini extension manifest tolerates the field; record if it does not)
+- .claude-plugin/marketplace.json (add version/license to the plugin entry ONLY if the claude-code marketplace schema allows it — check the schema before adding; record if schema forbids)
+- git metadata: commits, tag v1.0.0, push
+
+DO NOT TOUCH: skills/, LICENSE, plugin.json, .claude-plugin/plugin.json, .codex-plugin/plugin.json, .iterate/ (except writing your evidence into .iterate/professional-repo/eye/round-1/).
+
+BUILD LINES (from the loop checklist — all 22):
+
+A. README.md rewrite:
+- Top: <picture> banner (dark: assets/banner-dark.svg, light: assets/banner-light.svg), width 880.
+- Badges row (shields.io, style=flat-square, color 111111): stars (img.shields.io/github/stars/1Rizqi/goat-iterate), spec Agent Plugins v1.0.0, license MIT.
+- Pitch: exactly 3 sentences, keep the current opening's voice ("You ask your agent to build something. It builds it, says "done", and grades its own homework. goat-iterate splits the job across three roles, so the judge never wrote the code it scores:") followed by the 3 role bullets (Lead / Builders / Critic).
+- Loop diagram: <picture> with assets/loop-dark.svg / assets/loop-light.svg, width 880, with descriptive alt text.
+- "How a loop runs": 4 numbered steps (Round 0 the bar / Round 1 full build / Rounds 2..N judge-keep-batch / Stop, incl. the BAR NOT MET rule).
+- "Install": 5 labeled targets, each with its own command block, REAL syntax only:
+  * Claude Code (two separate prompts): `/plugin marketplace add 1Rizqi/goat-iterate` then `/plugin install goat-iterate@goat-iterate`
+  * Codex: `codex plugin marketplace add 1Rizqi/goat-iterate` then `codex plugin add goat-iterate@goat-iterate`
+  * Gemini CLI: `gemini extensions install https://github.com/1Rizqi/goat-iterate`
+  * Hermes Agent: `hermes plugins install 1Rizqi/goat-iterate` then `hermes plugins enable goat-iterate`
+  * Any other agent: `npx skills add 1Rizqi/goat-iterate` or copy `skills/goat-iterate/` into the agent's skills directory
+- "Use": tell your agent "use goat-iterate for this"; loop folder .iterate/<slug>/ holds spec, rubric, checklist, per-round verdicts, evidence, state.md.
+- "What's in the box": path list — every path listed MUST exist on disk (verify with ls).
+- "License": MIT, link LICENSE.
+- VENDOR CONTAINMENT: the words Claude, Codex, Gemini, Hermes, Copilot, OpenCode appear ONLY inside the Install section (labels + command blocks). Everywhere else the text says "AI coding agents" / "your agent". Zero exceptions.
+- No placeholders, no TODOs, no fabricated numbers.
+
+B. SVG fixes:
+- loop-dark.svg + loop-light.svg: the two upward arrowheads (verdict arrow into LEAD at x=230, batch arrow into BUILDERS at x=600) stop ~6 user units short of the box bottoms (boxes end at y=300, arrowheads tip at y=306 pointing up but the path starts at y=300 — verify actual geometry and make arrowheads visually touch the box borders, gap <= 2 user units).
+- banner-dark.svg + banner-light.svg: content spans only ~58-71% of canvas width; recompose so the rightmost content pixel reaches >= 900/1200 (75%). Keep the mark + wordmark + tagline layout, just widen/rebalance (e.g. larger type, more left margin usage). Keep both variants visually identical in geometry.
+- All 4: keep valid XML, no raster, text inside canvas.
+
+C. Manifests:
+- gemini-extension.json: add "license": "MIT" (if tolerated).
+- .claude-plugin/marketplace.json: fetch the marketplace schema (https://json.schemastore.org/claude-code-marketplace.json or the $schema URL) and add "version": "1.0.0" and "license": "MIT" to the plugin entry only where the schema allows; write your finding to the evidence file either way.
+- All 5 manifests must stay valid JSON agreeing on name goat-iterate / version 1.0.0 / license MIT (where the field is allowed).
+
+D. Git + metadata:
+- Commit the build (conventional style matching the repo: e.g. "professional repo: banner, badges, per-agent install, metadata").
+- gh CLI is at C:/Users/Rizqi/tools/gh/bin/gh.exe (not on PATH — use the absolute path).
+  * gh repo edit 1Rizqi/goat-iterate --homepage "https://github.com/1Rizqi/goat-iterate"
+  * description must stay <= 120 chars (current is fine; improve only if clearly better)
+  * topics: keep the existing 5, may add claude-code, codex, gemini-cli for discovery (metadata, not prose)
+- Tag the final commit: git tag v1.0.0 && git push origin main v1.0.0
+- Push main first, then the tag.
+
+EVIDENCE — save under .iterate/professional-repo/eye/round-1/builder-repo/ (folder exists not yet — create it):
+- README rendered: open the live https://github.com/1Rizqi/goat-iterate in your browser after pushing, screenshot dark AND light scheme (banner + badges + diagram must be visible, zero broken-image icons) -> save as readme-dark.png, readme-light.png
+- Each of the 4 SVGs opened directly in the browser and screenshotted -> svg-<name>.png
+- JSON parse output for all 5 manifests -> manifests-parse.txt
+- hermes plugins validate output -> hermes-validate.txt
+- gh api repo metadata (description, topics, homepage) -> repo-metadata.txt
+- grep proof: vendor names outside install section = 0 -> vendor-grep.txt
+- git log -1 + tag list -> git-state.txt
+
+DONE COMMAND (run before replying; all must be green):
+1. python -m json.tool on each of the 5 manifests
+2. hermes plugins validate C:/Users/Rizqi/projects/goat-iterate  (expect "Validation passed.", zero warnings)
+3. git status --short (clean except .iterate/) && git tag -l v1.0.0
+4. ls every path listed in the README "What's in the box" section
+
+REPLY (<= 15 lines): done N/M with evidence paths; each file changed (file:line); done command results; load: light|right|heavy; doubts. A line without evidence counts as not done.

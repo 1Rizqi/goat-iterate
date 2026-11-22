@@ -21,14 +21,14 @@ Solo building drifts: you write the spec, build the thing, and grade your own ho
 
 ## Install
 
-Install with your client's plugin install command. For Hermes Agent:
+Install with your agent's plugin install command. For Hermes Agent:
 
 ```
 hermes plugins install 1Rizqi/goat-iterate
 hermes plugins enable goat-iterate
 ```
 
-The skill loads as `goat-iterate:goat-iterate`.
+For Claude Code, Codex, Gemini CLI, OpenCode, Copilot CLI, and most other agents that support the Agent Plugins specification, the same command works (or point your agent to https://github.com/1Rizqi/goat-iterate). The skill loads as `goat-iterate:goat-iterate`.
 
 ## Use
 
