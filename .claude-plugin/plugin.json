@@ -11,5 +11,6 @@
   "license": "MIT",
   "keywords": ["quality-loop", "code-review", "builder", "critic", "delegation"],
   "agents": ["./agents/builder.md", "./agents/critic.md"],
+  "commands": "./commands",
   "hooks": "./.claude-plugin/hooks/hooks.json"
 }

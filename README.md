@@ -79,6 +79,16 @@ or copy `skills/goat-iterate/` into the agent's skills directory.
 
 Tell your agent "use goat-iterate for this". The loop folder `.iterate/<slug>/` holds the spec, rubric, checklist, per-round verdicts, evidence, and `state.md` (loop memory - a new chat resumes from it).
 
+## Commands
+
+| Command | What it does |
+|---------|--------------|
+| `/goat-iterate:iterate` `[resume <slug> \| amend <slug>]` | Run the loop on the task at hand. No argument starts a new loop; `resume` continues from the loop's `state.md` in a fresh chat; `amend` turns a follow-up request into new checklist lines in a finished loop and runs them as a small batch. |
+| `/goat-iterate:on` | Switch the rules and the delegate guard back on (clears the `~/.goat-off` flag). |
+| `/goat-iterate:off` | Switch them off, for this session and new ones, until `/goat-iterate:on`. |
+
+Commands need a host that maps plugin commands or skills to slash commands (Claude Code, Codex, Gemini CLI, Hermes Agent, OpenCode); everywhere else, tell your agent "use goat-iterate for this" - same loop, no slash; the scripts run anywhere Node runs.
+
 ### Run the scripts
 
 Run them from the repo root with Node:
@@ -101,6 +111,7 @@ skills/goat-iterate/references/spec-template.md
 skills/goat-iterate/references/subagent.md  builder/critic rules for dispatch briefs
 rules/session.md / subagent.md              the rules the emitter prints (lean lead, delegation, model ladder)
 agents/builder.md / critic.md               universal agent definitions: builder, critic
+commands/iterate.md / on.md / off.md        the slash commands: the loop, on, off
 scripts/delegate.js                         the delegate guard: the lead edits at most 3 deliverable files per session
 scripts/emit.js                             prints the rules: node scripts/emit.js session | subagent
 scripts/goat-off.js / goat-on.js            the off switch (flag file at ~/.goat-off) and back on
