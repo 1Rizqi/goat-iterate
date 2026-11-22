@@ -1,0 +1,40 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"require(require('path').join(process.env.CLAUDE_PLUGIN_ROOT, 'scripts', 'emit.js'))\"",
+            "timeout": 20,
+            "statusMessage": "Loading goat rules..."
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit|Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"require(require('path').join(process.env.CLAUDE_PLUGIN_ROOT, 'scripts', 'delegate.js'))\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"require(require('path').join(process.env.CLAUDE_PLUGIN_ROOT, 'scripts', 'emit.js'))\"",
+            "timeout": 20
+          }
+        ]
+      }
+    ]
+  }
+}

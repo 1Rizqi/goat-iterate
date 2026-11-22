@@ -1,7 +1,7 @@
 ---
 name: goat-iterate
 description: Use for build-critique loops with builder and critic agents.
-version: 0.6.0
+version: 0.7.0
 author: Riz
 license: MIT
 metadata:
@@ -17,13 +17,19 @@ You are the lead. Builders make the deliverable; a fresh critic runs the eye and
 2. Step-by-step work the user reviews as it lands (UI/copy tweaks from an approved mockup): user is the judge. No loop, no critic.
 3. Loop (user invoked the plugin, or new module / rebuild / architecture change): this skill.
 4. Anything else: builders + done command + eye + code-review before commit; offer the loop in one line.
-A follow-up on a deliverable with `.iterate/<slug>/` is an **amend** (references/rounds.md), never a new loop.
+A follow-up on a deliverable with `.iterate/<slug>/` is **amend <slug>** (references/rounds.md), never a new loop.
 
 ## Lean lead
 - One task = one chat; when done or corrected twice on one thing, suggest starting a fresh chat.
-- Loop folder `.iterate/<slug>/` (add to .git/info/exclude): `spec.md`, `eye.md`, `rubric.md`, `checklist.md`, `round-N.md`, `metrics.md`, `eye/round-N/`, `state.md`, `summary.md`. `state.md` = loop memory (round, best-so-far commit, per-area scope lists, load table, open global change). New chat resumes from it, never mid-loop compaction.
+- Loop folder `.iterate/<slug>/` (add to .git/info/exclude): `spec.md`, `eye.md`, `rubric.md`, `checklist.md`, `round-N.md`, `metrics.md`, `eye/round-N/`, `state.md`, `summary.md`. `state.md` = loop memory (round, best-so-far commit, per-area scope lists, load table, open global change). Resume in a new chat with **resume <slug>**, briefed from the latest `round-N.md`; never compact mid-loop.
 - You edit no deliverable file inside the loop — every change goes through a builder (low model tier for mechanical lines). Git: the builder commits its code deliverable (user role split assigns all technical work, git included, to the builder); the lead never edits deliverable files directly and only steers via dispatch prompts. Branch `iterate/<slug>` unless the project is single-branch; a kept round commits with its score line.
-- Agents write full output to the loop folder; builders save per-line evidence (test output, screenshot, frame, diff, log) under `eye/round-N/builder-<area>/` — a line without evidence is not done. Hand pointers ("area `api` in checklist.md"), never pasted lists.
+- Agents write full output to the loop folder; builders save per-line evidence (test output, screenshot, frame, diff, log) under `eye/round-N/builder-<area>/` of the round that JUDGES the line (round-1 build evidence lands in `eye/round-2/builder-<area>/`) — a line without evidence is not done. Hand pointers ("area `api` in checklist.md"), never pasted lists.
+
+## Scope
+Before briefing, list for each area every place its lines must reach: the files the lines name, plus their callers, tests, fixtures, config, types and exports (the repo's decision log first; a read-only subagent for wider reading). That list is the builder's scope, written to `state.md`. Two areas that need the same file become one area.
+
+## Builder context retention
+Reuse a live builder (steer it) when its model fits the next batch; its context carries over. Start a fresh builder briefed from `state.md`, its scope list and its lines when the next batch needs another step.
 
 ## Delegation
 Split by role, not by task — builders are background worker subagents of your agent tool, only the critic is a fresh subagent with clean context:
@@ -41,6 +47,7 @@ low tier (exact file:line + target value, renames, fixtures, grep sweeps) → me
 
 ## Stop
 - **Bar met:** ≥90% PASS, every aspect ≥8, no open professional rejection (last round; after last mile also every fixed line PASS on re-eye). Amend: all aN lines PASS, no regression.
+- **Stretch round** (only when the spec asks): the critic rewrites each 8-10 descriptor into what a 10 needs; the result is kept only if pairwise better.
 - **Plateau:** two judged rounds with nothing better, after one approach change tried.
 - **Budget:** 4 judged rounds default (spec may raise; amend budget 2).
 - Every stop without bar met writes `BAR NOT MET` as line 1 of summary.md and the chat report. The words "done/selesai" appear only when the bar is met.
@@ -48,8 +55,12 @@ low tier (exact file:line + target value, renames, fixtures, grep sweeps) → me
 
 Mechanical checks ("is every use gone?", gates pass?) are grep/tests/code-review, never a critic. Ask the user mid-loop only for irreversible actions or contract changes.
 
+## Compact instructions
+Preserve: current task, `.iterate/<slug>/` path and round, best-so-far commit, files changed, last test or eye result, every decision with its reason, each agent's id.
+
 ## References
 - references/eye.md — eye table by deliverable type (evidence beats source).
 - references/spec-template.md — SPEC draft template.
 - references/rounds.md — round-by-round detail incl. amend.
 - references/subagent.md — builder/critic rules to paste into dispatch briefs.
+- agents/builder.md and agents/critic.md — the universal agent definitions (behavior contracts); use them as the brief and agent-file template.

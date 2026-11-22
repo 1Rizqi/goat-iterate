@@ -45,6 +45,8 @@ You ask your agent to build something. It builds it, says "done", and grades its
 /plugin install goat-iterate@goat-iterate
 ```
 
+After install, the hooks (delegate guard + rules injection) activate on restart. Other agents: run `node scripts/emit.js session` manually at session start, or wire their own hook to the same script.
+
 **Codex:**
 
 ```bash
@@ -86,6 +88,12 @@ skills/goat-iterate/references/eye.md       eye table by deliverable type (evide
 skills/goat-iterate/references/rounds.md    round-by-round detail incl. amend
 skills/goat-iterate/references/spec-template.md
 skills/goat-iterate/references/subagent.md  builder/critic rules for dispatch briefs
+rules/session.md / subagent.md              the rules the emitter prints (lean lead, delegation, model ladder)
+agents/builder.md / critic.md               universal agent definitions: builder, critic
+scripts/delegate.js                         the delegate guard: the lead edits at most 3 deliverable files per session
+scripts/emit.js                             prints the rules: node scripts/emit.js session | subagent
+scripts/goat-off.js / goat-on.js            the off switch (flag file at ~/.goat-off) and back on
+tests/delegate.test.js                      the guard's tests: node --test tests/
 assets/banner-dark.svg / banner-light.svg   README banner, dark + light
 assets/loop-dark.svg / loop-light.svg       the loop diagram, dark + light
 LICENSE                                     MIT

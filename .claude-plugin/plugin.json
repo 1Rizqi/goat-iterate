@@ -9,5 +9,7 @@
   "homepage": "https://github.com/1Rizqi/goat-iterate",
   "repository": "https://github.com/1Rizqi/goat-iterate",
   "license": "MIT",
-  "keywords": ["quality-loop", "code-review", "builder", "critic", "delegation"]
+  "keywords": ["quality-loop", "code-review", "builder", "critic", "delegation"],
+  "agents": ["./agents/builder.md", "./agents/critic.md"],
+  "hooks": "./.claude-plugin/hooks/hooks.json"
 }
