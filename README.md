@@ -93,7 +93,7 @@ agents/builder.md / critic.md               universal agent definitions: builder
 scripts/delegate.js                         the delegate guard: the lead edits at most 3 deliverable files per session
 scripts/emit.js                             prints the rules: node scripts/emit.js session | subagent
 scripts/goat-off.js / goat-on.js            the off switch (flag file at ~/.goat-off) and back on
-tests/delegate.test.js                      the guard's tests: node --test tests/
+tests/delegate.test.js                      the guard's tests: node --test tests/delegate.test.js
 assets/banner-dark.svg / banner-light.svg   README banner, dark + light
 assets/loop-dark.svg / loop-light.svg       the loop diagram, dark + light
 LICENSE                                     MIT

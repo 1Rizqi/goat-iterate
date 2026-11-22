@@ -1,4 +1,4 @@
-// Tests for the delegate.js guard: run `node --test tests/` from the repo root.
+// Tests for the delegate.js guard: run `node --test tests/delegate.test.js` from the repo root.
 const { test, after } = require('node:test');
 const assert = require('node:assert');
 const { spawnSync, spawn } = require('node:child_process');
