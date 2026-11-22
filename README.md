@@ -79,6 +79,17 @@ or copy `skills/goat-iterate/` into the agent's skills directory.
 
 Tell your agent "use goat-iterate for this". The loop folder `.iterate/<slug>/` holds the spec, rubric, checklist, per-round verdicts, evidence, and `state.md` (loop memory - a new chat resumes from it).
 
+### Run the scripts
+
+Run them from the repo root with Node:
+
+```bash
+node scripts/emit.js session        # print the session rules (manual wiring)
+node scripts/emit.js subagent       # print the subagent rules (hook or brief)
+node scripts/goat-off.js            # rules and guard off (flag at ~/.goat-off)
+node scripts/goat-on.js             # switch them back on
+```
+
 ## What's in the box
 
 ```
