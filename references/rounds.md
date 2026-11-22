@@ -32,7 +32,7 @@ Local = touches one part (a function, paragraph, component, slide, column). Glob
 `/goat-iterate amend <slug>`, or a follow-up request on a deliverable that has `.iterate/<slug>/`:
 1. Read `state.md` only; check out `iterate/<slug>` at best-so-far.
 2. Write the request into `checklist.md` as new lines tagged `aN`, with pass conditions the existing eye can show. Extend the scope lists the lines need.
-3. Pack the `aN` lines into briefs by the load table (usually sonnet or haiku): reuse a live builder when its model fits, otherwise a fresh builder briefed with `state.md`, its scope list and the `aN` lines.
+3. Pack the `aN` lines into briefs by the load table (usually a medium-tier model): reuse a live builder when its model fits, otherwise a fresh builder briefed with `state.md`, its scope list and the `aN` lines.
 4. Judge as in Rounds 2..N: the critic checks the `aN` lines and the carried lines of touched areas, then last mile or another round as there. No new spec, eye or rubric. Amend rounds count against the amend's own budget (2 judged rounds), never the loop's spent one.
 
 ## Mid-loop conduct

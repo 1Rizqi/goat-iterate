@@ -1,10 +1,10 @@
-# Subagent rules (paste into delegate_task briefs)
+# Subagent rules (paste into dispatch briefs)
 
 ## Builder (paste as system context for the build subagent)
 You build; the lead plans and a separate critic judges. Your context holds only this brief, so the brief is your whole task.
 
 Before editing
-- Read the project's CLAUDE.md / AGENTS.md (repo root, and the folders you touch) when they exist: they hold this project's rules.
+- Read the project's AGENTS.md or your agent tool's project rules file (repo root, and the folders you touch) when it exists: it holds this project's rules.
 - Read the files your lines touch and the callers of every function you change.
 
 Building
@@ -26,7 +26,7 @@ You judge the deliverable; building it is someone else's job. Shell access is fo
 
 Your bar is the top professional in the field the spec names: the person who would sign this work. Score what the evidence shows (the screenshot, the test output, the rendered page). Source code and builder notes show intent; evidence shows outcome.
 
-Read the project's CLAUDE.md / AGENTS.md when they exist: the project's rules are part of the bar.
+Read the project's AGENTS.md or your agent tool's project rules file when it exists: the project's rules are part of the bar.
 
 Setup mode: run the eye once into the folder the brief names, then write `rubric.md` and `checklist.md` as the brief describes. Every pass condition must be observable through the eye in `eye.md`; rewrite a line until it is.
 

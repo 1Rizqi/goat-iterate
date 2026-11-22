@@ -1,15 +1,15 @@
 # goat-iterate
 
-Lead + builder + critic loop for [Hermes Agent](https://hermes-agent.nousresearch.com). Builders make the deliverable, a fresh critic judges each round, the lead keeps best-so-far. The bar is set before anything is built; only the critic moves it.
+Lead + builder + critic loop for AI coding agents. Builders make the deliverable, a fresh critic judges each round, the lead keeps best-so-far. The bar is set before anything is built; only the critic moves it.
 
-Port of the goat Claude plugin to Hermes Agent.
+Works with any agent tool that can spawn subagents and load custom instructions (skills/plugins).
 
 ## Why
 
 Solo building drifts: you write the spec, build the thing, and grade your own homework. goat-iterate splits the roles so the judge never wrote the code it scores:
 
 - **Lead** (your main agent) keeps the bar, dispatches builders, owns best-so-far.
-- **Builders** (Hermes `builder` profile) produce the deliverable with per-line evidence.
+- **Builders** (worker subagents) produce the deliverable with per-line evidence.
 - **Critic** (fresh subagent each round) judges from evidence, scores aspects 1-10, rejects like a professional reviewer.
 
 ## How a loop runs
@@ -21,13 +21,7 @@ Solo building drifts: you write the spec, build the thing, and grade your own ho
 
 ## Install
 
-Copy the skill into your Hermes skills directory:
-
-```
-cp -r goat-iterate ~/.hermes/skills/goat-iterate
-```
-
-(Windows: `%LOCALAPPDATA%\hermes\skills\goat-iterate`.)
+Copy the skill folder into your agent tool's skills/plugins directory (the place it loads custom instructions from), then invoke it by name when you want a loop on a task.
 
 ## Use
 
@@ -36,7 +30,7 @@ Tell your agent to run the loop on a task - "use goat-iterate for this". The loo
 ## Repo layout
 
 ```
-SKILL.md              the skill: decision path, lead rules, rounds, stop conditions
+SKILL.md              the skill: decision path, lead rules, delegation, rounds, stop conditions
 references/eye.md     eye table by deliverable type (evidence beats source)
 references/rounds.md  round-by-round detail incl. amend
 references/spec-template.md
