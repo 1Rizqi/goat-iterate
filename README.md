@@ -8,9 +8,9 @@
 <h1 align="center">goat-iterate</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/github/stars/1Rizqi/goat-iterate?style=flat-square&color=111111&label=stars" alt="Stars">
   <img src="https://img.shields.io/badge/spec-Agent%20Plugins%20v1.0.0-111111?style=flat-square" alt="Agent Plugins specification v1.0.0">
   <img src="https://img.shields.io/badge/license-MIT-111111?style=flat-square" alt="MIT license">
+  <img src="https://img.shields.io/badge/PRs-welcome-111111?style=flat-square" alt="PRs welcome">
 </p>
 
 You ask your agent to build something. It builds it, says "done", and grades its own homework. goat-iterate splits the job across three roles, so the judge never wrote the code it scores:

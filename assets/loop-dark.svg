@@ -33,12 +33,12 @@
 
   <!-- forward arrows -->
   <g stroke="#8b949e" stroke-width="3" fill="none">
-    <path d="M 380 190 L 444 190"/>
-    <path d="M 750 190 L 814 190"/>
+    <path d="M 380 190 L 449 190"/>
+    <path d="M 750 190 L 819 190"/>
   </g>
   <g fill="#8b949e" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13">
-    <path d="M 444 190 l -12 -6 v 12 z"/>
-    <path d="M 814 190 l -12 -6 v 12 z"/>
+    <path d="M 449 190 l -12 -6 v 12 z"/>
+    <path d="M 819 190 l -12 -6 v 12 z"/>
     <text x="397" y="178">brief</text>
     <text x="762" y="178">evidence</text>
   </g>

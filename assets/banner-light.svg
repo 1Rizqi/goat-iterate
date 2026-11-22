@@ -3,7 +3,7 @@
   <rect x="1" y="1" width="1198" height="318" rx="24" fill="#ffffff" stroke="#d0d7de" stroke-width="2"/>
 
   <!-- mark: three-node loop -->
-  <g transform="translate(120,160)">
+  <g transform="translate(237,160)">
     <circle cx="0" cy="-52" r="30" fill="none" stroke="#bc4c00" stroke-width="5"/>
     <circle cx="45" cy="26" r="30" fill="none" stroke="#1a7f37" stroke-width="5"/>
     <circle cx="-45" cy="26" r="30" fill="none" stroke="#0969da" stroke-width="5"/>
@@ -15,7 +15,7 @@
     <text x="-45" y="34" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#0969da">C</text>
   </g>
 
-  <text x="270" y="152" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="108" font-weight="800" fill="#1f2328" letter-spacing="1">goat-iterate</text>
-  <text x="274" y="216" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="30" fill="#57606a">Builders build. A fresh critic judges. Keep the best.</text>
-  <text x="274" y="260" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="21" fill="#6e7781">the build-critique loop for AI coding agents</text>
+  <text x="387" y="152" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="108" font-weight="800" fill="#1f2328" letter-spacing="1">goat-iterate</text>
+  <text x="391" y="216" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="30" fill="#57606a">Builders build. A fresh critic judges. Keep the best.</text>
+  <text x="391" y="260" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="21" fill="#6e7781">the build-critique loop for AI coding agents</text>
 </svg>
