@@ -1,8 +1,8 @@
 # goat-iterate
 
-Lead + builder + critic loop for AI coding agents. Builders make the deliverable, a fresh critic judges each round, the lead keeps best-so-far. The bar is set before anything is built; only the critic moves it.
+Lead + builder + critic loop for AI coding agents, packaged as an Agent Plugins v1 plugin. Builders make the deliverable, a fresh critic judges each round, the lead keeps best-so-far. The bar is set before anything is built; only the critic moves it.
 
-Works with any agent tool that can spawn subagents and load custom instructions (skills/plugins).
+Works with any agent tool that supports the Agent Plugins specification and can spawn subagents.
 
 ## Why
 
@@ -21,7 +21,14 @@ Solo building drifts: you write the spec, build the thing, and grade your own ho
 
 ## Install
 
-Copy the skill folder into your agent tool's skills/plugins directory (the place it loads custom instructions from), then invoke it by name when you want a loop on a task.
+Install with your client's plugin install command. For Hermes Agent:
+
+```
+hermes plugins install 1Rizqi/goat-iterate
+hermes plugins enable goat-iterate
+```
+
+The skill loads as `goat-iterate:goat-iterate`.
 
 ## Use
 
@@ -30,11 +37,12 @@ Tell your agent to run the loop on a task - "use goat-iterate for this". The loo
 ## Repo layout
 
 ```
-SKILL.md              the skill: decision path, lead rules, delegation, rounds, stop conditions
-references/eye.md     eye table by deliverable type (evidence beats source)
-references/rounds.md  round-by-round detail incl. amend
-references/spec-template.md
-references/subagent.md  builder/critic rules for dispatch briefs
+plugin.json                                 Agent Plugins v1.0.0 manifest
+skills/goat-iterate/SKILL.md                the skill: decision path, lead rules, delegation, rounds, stop conditions
+skills/goat-iterate/references/eye.md       eye table by deliverable type (evidence beats source)
+skills/goat-iterate/references/rounds.md    round-by-round detail incl. amend
+skills/goat-iterate/references/spec-template.md
+skills/goat-iterate/references/subagent.md  builder/critic rules for dispatch briefs
 ```
 
 ## License

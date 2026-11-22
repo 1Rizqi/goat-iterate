@@ -5,8 +5,7 @@ version: 0.6.0
 author: Riz
 license: MIT
 metadata:
-  tags: [goat, iterate, builder, critic, quality-loop, delegation]
-  related_skills: [code-review, tdd, qa-evidence]
+  tags: goat, iterate, builder, critic, quality-loop, delegation
 ---
 
 # GOAT iterate (lead + builder + critic)
