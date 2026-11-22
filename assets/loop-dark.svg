@@ -45,16 +45,16 @@
 
   <!-- verdict arrow back to lead -->
   <g stroke="#8b949e" stroke-width="3" fill="none">
-    <path d="M 970 300 L 970 360 L 230 360 L 230 306"/>
+    <path d="M 970 300 L 970 360 L 230 360 L 230 301"/>
   </g>
-  <path d="M 230 306 l -6 12 h 12 z" fill="#8b949e"/>
+  <path d="M 230 301 l -6 12 h 12 z" fill="#8b949e"/>
   <text x="600" y="350" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" fill="#8b949e">verdict + aspect scores, pairwise vs best-so-far</text>
 
   <!-- batch arrow critic back to builders -->
   <g stroke="#3fb950" stroke-width="3" fill="none" stroke-dasharray="8 6">
-    <path d="M 1060 300 L 1060 430 L 600 430 L 600 306"/>
+    <path d="M 1060 300 L 1060 430 L 600 430 L 600 301"/>
   </g>
-  <path d="M 600 306 l -6 12 h 12 z" fill="#3fb950"/>
+  <path d="M 600 301 l -6 12 h 12 z" fill="#3fb950"/>
   <text x="830" y="452" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" fill="#3fb950">next round: every FAIL + UNSEEN + new line, grouped by root cause</text>
 
   <!-- stop bar -->

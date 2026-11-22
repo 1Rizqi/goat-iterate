@@ -1,16 +1,30 @@
-# goat-iterate
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
+    <img src="assets/banner-light.svg" width="880" alt="goat-iterate: builders build, a fresh critic judges, the lead keeps the best. The build-critique loop for AI coding agents.">
+  </picture>
+</p>
 
-Lead + builder + critic loop for AI coding agents, packaged as an Agent Plugins v1 plugin. Builders make the deliverable, a fresh critic judges each round, the lead keeps best-so-far. The bar is set before anything is built; only the critic moves it.
+<h1 align="center">goat-iterate</h1>
 
-Works with any agent tool that supports the Agent Plugins specification and can spawn subagents.
+<p align="center">
+  <img src="https://img.shields.io/github/stars/1Rizqi/goat-iterate?style=flat-square&color=111111&label=stars" alt="Stars">
+  <img src="https://img.shields.io/badge/spec-Agent%20Plugins%20v1.0.0-111111?style=flat-square" alt="Agent Plugins specification v1.0.0">
+  <img src="https://img.shields.io/badge/license-MIT-111111?style=flat-square" alt="MIT license">
+</p>
 
-## Why
-
-Solo building drifts: you write the spec, build the thing, and grade your own homework. goat-iterate splits the roles so the judge never wrote the code it scores:
+You ask your agent to build something. It builds it, says "done", and grades its own homework. goat-iterate splits the job across three roles, so the judge never wrote the code it scores:
 
 - **Lead** (your main agent) keeps the bar, dispatches builders, owns best-so-far.
 - **Builders** (worker subagents) produce the deliverable with per-line evidence.
 - **Critic** (fresh subagent each round) judges from evidence, scores aspects 1-10, rejects like a professional reviewer.
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/loop-dark.svg">
+    <img src="assets/loop-light.svg" width="880" alt="The goat-iterate loop: the lead sets the bar and dispatches builders; builders build every checklist line and save per-line evidence; a fresh critic judges each round from evidence; the lead keeps what passed and batches every FAIL into the next round; the loop stops when the bar is met or the budget is spent.">
+  </picture>
+</p>
 
 ## How a loop runs
 
@@ -21,20 +35,49 @@ Solo building drifts: you write the spec, build the thing, and grade your own ho
 
 ## Install
 
-Install with your agent's plugin install command. For Hermes Agent:
+**Claude Code**, as two separate prompts:
+
+```
+/plugin marketplace add 1Rizqi/goat-iterate
+```
+
+```
+/plugin install goat-iterate@goat-iterate
+```
+
+**Codex:**
+
+```bash
+codex plugin marketplace add 1Rizqi/goat-iterate
+codex plugin add goat-iterate@goat-iterate
+```
+
+**Gemini CLI:**
+
+```
+gemini extensions install https://github.com/1Rizqi/goat-iterate
+```
+
+**Hermes Agent:**
 
 ```
 hermes plugins install 1Rizqi/goat-iterate
 hermes plugins enable goat-iterate
 ```
 
-For Claude Code, Codex, Gemini CLI, OpenCode, Copilot CLI, and most other agents that support the Agent Plugins specification, the same command works (or point your agent to https://github.com/1Rizqi/goat-iterate). The skill loads as `goat-iterate:goat-iterate`.
+**Any other agent:**
+
+```
+npx skills add 1Rizqi/goat-iterate
+```
+
+or copy `skills/goat-iterate/` into the agent's skills directory.
 
 ## Use
 
-Tell your agent to run the loop on a task - "use goat-iterate for this". The loop folder `.iterate/<slug>/` holds spec, rubric, checklist, per-round verdicts, evidence, and `state.md` (loop memory - a new chat resumes from it).
+Tell your agent "use goat-iterate for this". The loop folder `.iterate/<slug>/` holds the spec, rubric, checklist, per-round verdicts, evidence, and `state.md` (loop memory - a new chat resumes from it).
 
-## Repo layout
+## What's in the box
 
 ```
 plugin.json                                 Agent Plugins v1.0.0 manifest
@@ -43,8 +86,11 @@ skills/goat-iterate/references/eye.md       eye table by deliverable type (evide
 skills/goat-iterate/references/rounds.md    round-by-round detail incl. amend
 skills/goat-iterate/references/spec-template.md
 skills/goat-iterate/references/subagent.md  builder/critic rules for dispatch briefs
+assets/banner-dark.svg / banner-light.svg   README banner, dark + light
+assets/loop-dark.svg / loop-light.svg       the loop diagram, dark + light
+LICENSE                                     MIT
 ```
 
 ## License
 
-MIT
+[MIT](LICENSE).

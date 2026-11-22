@@ -9,6 +9,8 @@
   "plugins": [
     {
       "name": "goat-iterate",
+      "version": "1.0.0",
+      "license": "MIT",
       "description": "Builders build with per-line evidence, a fresh critic judges each round, the lead keeps best-so-far.",
       "source": "./",
       "category": "productivity"
